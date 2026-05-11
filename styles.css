@@ -1,0 +1,597 @@
+/* =========================
+   CONFIGURACIÓN GENERAL
+   ========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Hace que el desplazamiento sea más suave */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #222;
+    background: #f5f7fb;
+}
+
+/* =========================
+   HEADER
+   ========================= */
+.main-header {
+    background: linear-gradient(90deg, #1e3c72, #2a5298);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column; /* En móvil se muestra uno debajo del otro */
+    gap: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: sticky; /* El menú queda fijo arriba al bajar */
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo-icon {
+    background: white;
+    color: #2a5298;
+    width: 32px;
+    height: 32px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.nav-menu a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* =========================
+   HERO
+   ========================= */
+.hero {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    align-items: center;
+}
+
+.hero-text h1 {
+    font-size: 2.2rem;
+    color: #1e3c72;
+    margin-bottom: 15px;
+}
+
+.hero-text p {
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.hero-image img,
+.about-image img,
+.card img {
+    width: 100%;
+    display: block;
+    border-radius: 16px;
+}
+
+/* =========================
+   BOTONES
+   ========================= */
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    padding: 12px 22px;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: #ff7b54;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #ff5f2e;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: white;
+    color: #1e3c72;
+    border: 2px solid #1e3c72;
+}
+
+.btn-secondary:hover {
+    background: #1e3c72;
+    color: white;
+}
+
+/* =========================
+   ESTADÍSTICAS
+   ========================= */
+.stats {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.stat-box {
+    background: white;
+    padding: 25px;
+    text-align: center;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-top: 5px solid #2a5298;
+}
+
+.stat-box h2 {
+    font-size: 2rem;
+    color: #ff7b54;
+    margin-bottom: 5px;
+}
+
+/* =========================
+   SECCIONES
+   ========================= */
+.section {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 25px;
+    color: #1e3c72;
+}
+
+/* =========================
+   TARJETAS DE SERVICIOS
+   ========================= */
+.grid-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 15px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.card img {
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    color: #2a5298;
+    margin-bottom: 10px;
+}
+
+.card p {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.card-link {
+    color: #ff7b54;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.card-link:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   SOBRE NOSOTROS
+   ========================= */
+.about-section {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    align-items: center;
+    background: #eaf1ff;
+    border-radius: 20px;
+}
+
+.about-text h2 {
+    color: #1e3c72;
+    margin-bottom: 15px;
+    font-size: 2rem;
+}
+
+.about-text p {
+    margin-bottom: 15px;
+    color: #444;
+}
+
+.about-text ul {
+    margin-bottom: 20px;
+    padding-left: 20px;
+    color: #333;
+}
+
+/* =========================
+   FORMULARIO DE CONTACTO
+   ========================= */
+.contact-section {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.contact-form {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    display: grid;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #2a5298;
+}
+
+.contact-form textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+.main-footer {
+    background: #1e1e1e;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 40px;
+}
+
+/* =========================
+   RESPONSIVE PARA PC
+   ========================= */
+   
+@media (min-width: 768px) {
+    .main-header {
+        flex-direction: row; /* En escritorio se coloca en línea */
+    }
+
+    .nav-menu ul {
+        margin-top: 0;
+    }
+
+    .hero {
+        grid-template-columns: 1.2fr 1fr;
+    }
+
+    .stats {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grid-content {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .about-section {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+/* =========================
+   CONTACTO EXTRA
+========================= */
+
+.contact-extra {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.contact-card {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: 0.3s;
+    border-bottom: 5px solid #2a5298;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.contact-card h3 {
+    color: #1e3c72;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.contact-card p {
+    color: #555;
+}
+
+/* =========================
+   EFECTOS EXTRA
+========================= */
+
+.hero-image img:hover,
+.about-image img:hover {
+    transform: scale(1.02);
+    transition: 0.4s;
+}
+
+.card img {
+    transition: 0.4s;
+}
+
+.card:hover img {
+    transform: scale(1.03);
+}
+
+/* =========================
+   RESPONSIVE CONTACTO
+========================= */
+
+@media (min-width: 768px) {
+
+    .contact-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+/* =========================
+   ICONOS MENÚ
+========================= */
+
+.nav-menu a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* =========================
+   SOLO ICONOS EN CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    .nav-menu span {
+        display: none;
+    }
+
+    .nav-menu a {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        justify-content: center;
+        background: rgba(255,255,255,0.15);
+    }
+
+    .nav-menu ul {
+        gap: 12px;
+    }
+
+    .nav-menu i {
+        font-size: 1.1rem;
+    }
+}
+/* ICONOS */
+
+.nav-menu a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+
+    /* OCULTA TEXTO */
+    .nav-menu span {
+        display: none;
+    }
+
+    /* SOLO ICONOS */
+    .nav-menu a {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        justify-content: center;
+        background: rgba(255,255,255,0.15);
+    }
+
+    .nav-menu i {
+        font-size: 20px;
+    }
+
+}
+/* =========================
+   BOTÓN HAMBURGUESA
+========================= */
+
+.menu-toggle {
+    display: none;
+    background: white;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    color: #1e3c72;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: 0.3s;
+}
+
+.menu-toggle:hover {
+    transform: scale(1.05);
+    background: #f2f2f2;
+}
+
+/* =========================
+   MENÚ RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    .main-header {
+        flex-direction: row;
+    }
+
+    /* Mostrar botón */
+    .menu-toggle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Ocultar menú */
+    .nav-menu {
+        position: absolute;
+        top: 80px;
+        left: 20px;
+        right: 20px;
+
+        background: white;
+        border-radius: 16px;
+
+        padding: 20px;
+
+        box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+
+        display: none;
+    }
+
+    /* Mostrar menú */
+    .nav-menu.active {
+        display: block;
+        animation: menuFade 0.3s ease;
+    }
+
+    /* Lista */
+    .nav-menu ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Links */
+    .nav-menu a {
+        color: #1e3c72;
+        background: #f5f7fb;
+
+        padding: 14px;
+        border-radius: 12px;
+
+        text-align: center;
+
+        font-weight: 600;
+
+        transition: 0.3s;
+    }
+
+    .nav-menu a:hover {
+        background: #2a5298;
+        color: white;
+    }
+
+}
+
+/* =========================
+   ANIMACIÓN
+========================= */
+
+@keyframes menuFade {
+
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
